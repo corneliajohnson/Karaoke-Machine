@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 /* Login Page */
 html { 
   background: url(/src/img/microphone.jpg) no-repeat center center fixed; 
@@ -8,16 +10,17 @@ html {
 }
 
 .login {
+  font-family: 'Playfair Display', serif;
   color: #fff;
   background-color: #ff6249;
-  padding: 40px;
-  position: fixed;
-  top: 30%;
+  padding: 30px;
+  border-radius: 5px; 
+  opacity: 0.9; 
+  position: absolute;
+  top: 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-  border-radius: 5px;
-  opacity: 0.9;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 .login-signup-link {
@@ -26,6 +29,7 @@ html {
 
 .login-forgot-link {
   color: #424949;
+  font-size: 12px;
 }
 
 .login-forgot-link:hover, .login-signup-link:hover {
