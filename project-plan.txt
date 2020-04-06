@@ -1,0 +1,27 @@
+Title: Vocals Up
+
+Goal: Create an interprace that allows users to put in thier favorite songs and sing karaokee. User will be able to choose between a varity of songs. The mic willl allow users to see thier voicals on the screen along with the lyrics.
+Features will include: visual vocals, visual lyrics and *instrumentals, a point and rating system based on useage.
+
+Code Plan
+
+User Login:
+function to...
+function to...
+
+Account Page:
+function to display...
+function to display...
+
+Song Setup Page:
+function to...
+function to...
+
+Song Playing Page:
+function to...
+funtion to...
+
+
+
+
+
