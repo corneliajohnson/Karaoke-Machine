@@ -6,8 +6,8 @@ Features will include: visual vocals, visual lyrics and *instrumentals, a point 
 Code Plan
 
 User Login:
-function to...
-function to...
+function tocheck if email and passwordare submitted
+function to invoke regular expression for matches
 
 Account Page:
 function to display...
