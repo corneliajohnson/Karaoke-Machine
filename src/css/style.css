@@ -9,7 +9,7 @@ html {
   background-size: cover;
 }
 
-.login {
+.login-page {
   font-family: 'Playfair Display', serif;
   color: #fff;
   background-color: #ff6249;
@@ -27,17 +27,11 @@ html {
   width: 60%;
 }
 
-.login-signup-link {
-  color: #fff;
-}
-
-.login-forgot-link {
-  color: #424949;
-  font-size: 12px;
-}
-
-.login-forgot-link:hover, .login-signup-link:hover {
-  font-weight: 500;
+.login-page .message a {
+  color: #4caf50;
   text-decoration: none;
-  color: #fff;
+}
+
+.login-page .register-form {
+  display: none;
 }

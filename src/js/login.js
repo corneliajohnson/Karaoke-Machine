@@ -1,13 +1,18 @@
 
-function missingLogin(){
-  const emailField = document.querySelector('.email-form');
-  const passwordField = document.querySelector('.password-form');
+//function for login validation
+(function() {
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
 
-  if (emailField.value == '' || passwordField.value == ''){
-    document.querySelector('.alert-area').innerHTML = `
-    <div class="alert alert-light" role="alert">
-     Enter Email & Password
-    </div>
-    `;
-  }
-}
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
