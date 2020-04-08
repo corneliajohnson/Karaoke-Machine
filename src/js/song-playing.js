@@ -1,6 +1,7 @@
 
 //FOR PLAYING THE SONG
 let song = document.createElement('audio');
+
 songChoice();
 
 //Returns Chosen Song File
@@ -11,6 +12,7 @@ function songChoice(){
 
 //Play Song
 function playSong() {
+ // mic = new p5.AudioIn();
   song.play();
 }
 
@@ -20,18 +22,42 @@ function pauseSong() {
 }
 
 
-//FOR MICROPHONE CONTROL
+
+//MICROPHONE CONTROL
 let mic;
+let volumeHistory = [];
+
 function setup()
 {
-  createCanvas(200, 200);
+  let canvas = document.querySelector('.canvas');
+  //createCanvas(400, 400);
   mic = new p5.AudioIn();
   mic.start();
 }
 
 function draw() {
-  background(0);
+  //background(0);
   let volume = mic.getLevel();
-  
-  ellipse(100, 100, volume * 200, volume * 200);
+  volumeHistory.push(volume);
+
+  stroke(255);
+  noFill();
+
+  let currentY = map(volume, 0, 1, height, 0);
+
+  translate(0, -height / 2 + currentY);
+  beginShape();
+
+  for (let i = 0; i < volumeHistory.length; i++) {
+    let y = map(volumeHistory[i], 0, 1, height, 0);
+    vertex(i, y);
+  }
+
+  endShape();
+
+  if (volumeHistory.length > width) {
+    volumeHistory.splice(0, 1);
+  }
+
+  //console.log(volume);
 }
