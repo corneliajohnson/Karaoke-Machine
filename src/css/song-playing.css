@@ -1,3 +1,21 @@
-h1{
-  color: green;
+
+.play-pause{
+  /* position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; */
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+}
+
+.music-btn-play, .music-btn-pause{
+  cursor: pointer;
+  font-size:12vw;
+}
+
+.music-btn-pause {
+  display: none;
 }

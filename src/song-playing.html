@@ -3,12 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/src/css/song-playing.css">
+  <script src="../p5/p5.js"></script>
+  <script src="../p5/addons/p5.sound.min.js"></script>
+
+  <script src="/src/js/song-playing.js"defer></script>
   <title>Vocal Up: Playing</title>
 </head>
 <body>
-  <h1 class="center-text">Song Playing Page</h1>
 
-  <script src="/src/js/song-playing.js"></script>
+
+  <div class="play-pause">
+    <div class="music-btn music-btn-play" onclick="playSong()"><i class="fa fa-play" aria-hidden="true"></i>
+    </div>
+    <div class="music-btn music-btn-pause" onclick="pauseSong()"><i class="fa fa-pause" aria-hidden="true"></i>
+    </div>
+  </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+  $('.music-btn').click(function(){
+  $('.music-btn').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+</script>
+
 </body>
+
 </html>
