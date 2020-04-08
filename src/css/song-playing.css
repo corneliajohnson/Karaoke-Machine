@@ -1,6 +1,4 @@
-html {
-  height: 100%;
-}
+html { height: 100%; display: flex; color: white; }
 
 body { 
   background: url(/src/img/mic-stand.jpg) no-repeat center center fixed; 
@@ -10,28 +8,67 @@ body {
   background-size: cover;
 }
 
+.song-title{
+  color: #ff6249;
+}
+
 .lyrics {
   border: 5px green solid;
   height: 400px;
-  width: 100%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  width: 90%;
 }
 
-.canvas{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #00004d;
-  background-image: linear-gradient(#00004d, #000);
-  opacity: 0.6;
+.canvas {
+  display: flex; 
+  width: 100vw;
+  height: 25vmin;
+  padding: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 700px;
+}
+
+.node {
+  display: block;
+  width: 5em;
+  height: 100%;
+  flex: 1 1 auto;
+  background: blue;
+  background: rgb(var(--c, 0), 155, 50);
+  transform-origin: bottom center;
+  margin: 1px;
+
+  transform: scaleY( var(--level, 0.1) );
+
+  transform: 
+    translateZ( calc( 
+      (1 - var(--level, 0)) * -200px
+    ) )
+
+    scaleY( calc( 
+      (var(--level,0) * 0.75) + 0.25) 
+    );
+
+  animation: eq-in .6s ease-out backwards;
+  animation-timing-function: cubic-bezier(.6,0,.2,1.3);
+  animation-duration: calc( .8s + ( var(--i) * .05s ) );
+  @keyframes eq-in {
+    from {
+      transform: 
+        translateZ( calc( 
+          (1 - var(--level, 0)) * -200px
+        ) )
+
+        scaleY(1);
+    }
+  }
 }
 
 .music-btn-play, .music-btn-pause{
   cursor: pointer;
-  font-size:12vw;
-  color: aliceblue;
+  font-size:8vw;
+  color: #ff6249;
 }
 
 .music-btn-pause {
