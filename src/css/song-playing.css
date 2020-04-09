@@ -14,15 +14,23 @@ body {
 
 .lyrics {
   border: 5px green solid;
-  height: 400px;
-  width: 90%;
+  height: 500px;
+  width: 100vw;
+  color:#fff;
+}
+
+.audio-visuals{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
 }
 
 .canvas {
   display: flex; 
-  width: 100vw;
-  height: 25vmin;
-  padding: 5px;
+  width: 70vw;
+  height: 10vmin;
   box-sizing: border-box;
   overflow: hidden;
   transform-style: preserve-3d;
@@ -65,12 +73,20 @@ body {
   }
 }
 
+.col-1{
+height: 5vmin;
+}
 .music-btn-play, .music-btn-pause{
   cursor: pointer;
-  font-size:8vw;
+  font-size:2vw;
   color: #ff6249;
 }
 
 .music-btn-pause {
   display: none;
+}
+
+.time {
+  color: #ff6249;
+  font-size:2vw;
 }

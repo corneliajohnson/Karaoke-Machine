@@ -1,25 +1,59 @@
 
 //FOR PLAYING THE SONG
 let song = document.createElement('audio');
+let liveTime;
 
 songChoice();
 
 //Returns Chosen Song File
 function songChoice(){
   //TODO add parameter to change song
-  return song.setAttribute('src', '/audio_files/ease_your_social.mp3');
+  song.setAttribute('src', '/audio_files/ease_your_social.mp3');
+  song.setAttribute('onloadedmetadata', 'songTime()'); //for song load
+  song.setAttribute('preload', 'metadata');
+  return song;
 }
 
 //Play Song
 function playSong() {
  // mic = new p5.AudioIn();
   song.play();
+  timeControl()
 }
 
 //Pause Song
 function pauseSong() {
   song.pause();
+  clearInterval(liveTime);
 }
+
+//funtion to control the time
+function timeControl ()
+{
+  liveTime = setInterval(songTime, 1000);
+}
+
+let time = 0;
+//GET TIME OF THE MP3
+function songTime() {
+  let songDuration = song.duration;
+  if(time == 0){
+    time += parseInt(Math.floor(songDuration));
+  }
+  let minutes = parseInt(Math.floor(time/60));
+  let seconds = Math.floor(time % 60);
+  
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+ 
+  //decrease time
+  time--;
+  document.querySelector('.time').innerHTML = `${minutes} : ${seconds}`;
+}
+
+
+//TODO FIGURE OUT HOW TO LOAD AN LRC FILE
+//TO SYNC LRC FILE WITH AUDIO MP3
+
 
 
 

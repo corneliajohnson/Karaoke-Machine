@@ -19,15 +19,24 @@
 
   <p id="volume">Click to start audio render. <br /><small>Make sure your browser gives permission to access the microphone.</small></p>
 
-  <div class="canvas">
-  <div class="play-pause">
-    <div class="music-btn music-btn-play" onclick="playSong()"><i class="fa fa-play" aria-hidden="true"></i>
-    </div>
-    <div class="music-btn music-btn-pause" onclick="pauseSong()"><i class="fa fa-pause" aria-hidden="true"></i>
+  <div class="audio-visuals">
+    <div class="row w-100">
+      <div class="col-1">
+        <div class="play-pause">
+          <div class="music-btn music-btn-play" onclick="playSong()"><i class="fa fa-play" aria-hidden="true"></i>
+          </div>
+          <div class="music-btn music-btn-pause" onclick="pauseSong()"><i class="fa fa-pause" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="canvas"></div>
+      </div>
+      <div class="col-1">
+        <div class="time"></div>
+      </div>
     </div>
   </div>
-  </div>
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
