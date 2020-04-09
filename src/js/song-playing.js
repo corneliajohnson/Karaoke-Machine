@@ -48,6 +48,8 @@ function songTime() {
   //decrease time
   time--;
   document.querySelector('.time').innerHTML = `${minutes} : ${seconds}`;
+
+  //load lrc file
 }
 
 
