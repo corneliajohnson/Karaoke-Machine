@@ -1,3 +1,6 @@
+// import
+//import Lyric from 'lrc-file-parser'
+
 
 //FOR PLAYING THE SONG
 let song = document.createElement('audio');
@@ -49,7 +52,6 @@ function songTime() {
   time--;
   document.querySelector('.time').innerHTML = `${minutes} : ${seconds}`;
 
-  //load lrc file
 }
 
 

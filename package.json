@@ -22,6 +22,8 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
+    "lrc-file-parser": "^1.0.3",
+    "lyrics.js": "^0.4.2",
     "popper.js": "^1.16.1"
   }
 }
